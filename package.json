@@ -1,6 +1,6 @@
 {
   "name": "express-battlenet-oauth",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "OAuth Authentication for Battle.net (World of Warcraft, Starcraft 2 profiles) for ExpressJS",
   "main": "index.js",
   "scripts": {},
