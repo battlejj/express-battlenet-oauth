@@ -1,10 +1,9 @@
 {
   "name": "express-battlenet-oauth",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "OAuth Authentication for Battle.net (World of Warcraft, Starcraft 2 profiles) for ExpressJS",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/battlejj/express-battlenet-oauth"
@@ -26,10 +25,11 @@
     "url": "https://github.com/battlejj/express-battlenet-oauth/issues"
   },
   "homepage": "https://github.com/battlejj/express-battlenet-oauth",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "body-parser": "^1.6.6",
     "express": "^4.8.5",
+    "querystring": "^0.2.0",
     "request": "^2.40.0"
   }
 }
