@@ -78,13 +78,17 @@ function you won't be able to do much useful with the authentication.
     </tr>
     <tr>
       <td>LOGIN_SUCCESS</td>
-      <td>```function(req, res){ res.status(200).send('Use your own method to manipulate res.token_data, 
-      currently: ' + JSON.stringify(res.token_data))}```</td>
+      <td>
+      function(req, res){ res.status(200).send('Use your own method to manipulate res.token_data, 
+      currently: ' + JSON.stringify(res.token_data))}
+      </td>
       <td>A function to handle a successful battle.net authentication, token data will be available at res.token_data</td>
     </tr>
     <tr>
       <td>LOGIN_FAILURE</td>
-      <td>```function(req, res){ res.status(500).send(res.error) }``</td>
+      <td>
+      function(req, res){ res.status(500).send(res.error) }
+      </td>
       <td>A function to handle a failed battle.net authentication (use declined access, bnet server errors, invalid 
       grants, etc), error data will be available at res.error</td>
     </tr>
