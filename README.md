@@ -36,7 +36,7 @@ app.set('LOGIN_SUCCESS', function(req, res){
   //battle.net oauth token is available in res.token_data for whatever your needs are
 });
 app.set('LOGIN_FAILURE', function(req, res){ 
-  //error is available in req.error for you to handle user permission denial or other errors
+  //error is available in res.error for you to handle user permission denial or other errors
 });
 
 app.use('/', auth);
@@ -60,4 +60,5 @@ Other fields:
 |BNET_SCOPE| 'wow.profile' | Changing the scope of your request. Valid values: wow.profile, sc2.profile|
 |BNET_AUTH_URL| '/auth/bnet' | This value is the route you want your Express app to use to begin BNET authentication|
 |BNET_CALLBACK_URL| '/auth/bnet/callback' | This value is the route you want your Express app to use for the callback from the Blizzard OAuth API. This value has to match your applications "REGISTER CALLBACK URL" minus your BASE_URL value|
-
+|LOGIN_SUCCESS| ```function(req, res){ res.status(200).send('Use your own method to manipulate res.token_data, currently: ' + JSON.stringify(res.token_data))}```| A function to handle a successful battle.net authentication, token data will be available at res.token_data|
+|LOGIN_FAILURE| ```function(req, res){ res.status(500).send(res.error) }``| A function to handle a failed battle.net authentication (use declined access, bnet server errors, invalid grants, etc), error data will be available at res.error |
