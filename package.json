@@ -25,10 +25,13 @@
     "url": "https://github.com/battlejj/express-battlenet-oauth/issues"
   },
   "homepage": "https://github.com/battlejj/express-battlenet-oauth",
-  "devDependencies": {},
+  "devDependencies": {
+    "express-session": "^1.7.6"
+  },
   "dependencies": {
     "body-parser": "^1.6.6",
     "express": "^4.8.5",
+    "node-uuid": "^1.4.1",
     "querystring": "^0.2.0",
     "request": "^2.40.0"
   }

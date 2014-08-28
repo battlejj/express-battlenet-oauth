@@ -8,17 +8,24 @@ Handy sub-app for quickly adding Battle.net (https://dev.battle.net) OAuth to yo
 $ npm install express-battlenet-oauth
 ````
 
-###Read Before Getting Started
+####Read Before Getting Started
 <div style="width:100%; background-color:#f1e05a;">
 Blizzard's OAuth requires that your callback URL be served via SSL.
 This makes creating usable tests difficult. You'll have to provide your site via SSL at least for your
 BNET_CALLBACK_URL or you will receive the error "Invalid redirect_url."
 
 See http://us.battle.net/en/forum/topic/13977887738#8 for more information.
+
+
+**DISCLAIMER**: The following will seem silly to point out, because without sessions enabled authentication is kind 
+of pointless, however, please read it anyway.
+
+While not *strictly* required, it is ***highly recommended*** you enable sessions in your application and make
+the session available through req.session. If you don't do this, pseudo-random state parameters cannot be created
+to prevent unauthorized 3rd party authentication attempts. 
 </div>
 
-
-###Easy to Implement
+####Minimal Implementation
 ```javascript
 var express = require('express');
 var app = express();
@@ -44,7 +51,17 @@ app.use('/', bnet);
 //Setup your express app like normal
 ```
 
-###Options
+For a full example please see: https://github.com/battlejj/express-battlenet-oauth/blob/master/examples/index.js
+
+The example should be fully functional as is if you plop in your API Key and Secret and from the root folder run 
+```
+npm install
+```
+I've included a localhost SSL private key and certificate to be used for testing. It will require you to accept
+a security exception since it is a self signed certificate. Chrome is the most ominous about this warning.
+
+
+####Options
 All options for express-battlenet-oauth are set in your main express app via:
 
 ```javascript
