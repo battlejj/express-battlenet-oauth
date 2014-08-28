@@ -1,10 +1,9 @@
 {
   "name": "express-battlenet-oauth",
-  "version": "0.0.0",
-  "description": "OAuth Authentication for Battle.net for ExpressJS",
+  "version": "0.0.1",
+  "description": "OAuth Authentication for Battle.net (World of Warcraft, Starcraft 2 profiles) for ExpressJS",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -15,7 +14,11 @@
     "battle.net",
     "express",
     "expressjs",
-    "oauth"
+    "oauth",
+    "wow",
+    "warcraft",
+    "sc2",
+    "starcraft"
   ],
   "author": "Jeremy Battle <jeremy@jeremybattle.com>",
   "license": "MIT",
@@ -24,8 +27,6 @@
   },
   "homepage": "https://github.com/battlejj/express-battlenet-oauth",
   "devDependencies": {
-    "chai": "^1.9.1",
-    "mocha": "^1.21.4"
   },
   "dependencies": {
     "express": "^4.8.5",
