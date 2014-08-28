@@ -39,7 +39,7 @@ app.set('LOGIN_FAILURE', function(req, res){
   //error is available in res.error for you to handle user permission denial or other errors
 });
 
-app.use('/', auth);
+app.use('/', bnet);
 
 //Setup your express app like normal
 ```
