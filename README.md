@@ -53,12 +53,40 @@ app.set('VARIABLE_NAME', value);
 The only non-optional fields are BASE_URL, BNET_ID and BNET_SECRET, however, without setting a LOGIN_SUCCESS, LOGIN_FAILURE
 function you won't be able to do much useful with the authentication.
 
-Other fields:
-| Field | Default | Usage|
-|-------|---------|------|
-|BNET_REGION| 'us' | Changing the region you auth against. Valid values: us, eu, kr, tw, or cn|
-|BNET_SCOPE| 'wow.profile' | Changing the scope of your request. Valid values: wow.profile, sc2.profile|
-|BNET_AUTH_URL| '/auth/bnet' | This value is the route you want your Express app to use to begin BNET authentication|
-|BNET_CALLBACK_URL| '/auth/bnet/callback' | This value is the route you want your Express app to use for the callback from the Blizzard OAuth API. This value has to match your applications "REGISTER CALLBACK URL" minus your BASE_URL value|
-|LOGIN_SUCCESS| ```function(req, res){ res.status(200).send('Use your own method to manipulate res.token_data, currently: ' + JSON.stringify(res.token_data))}```| A function to handle a successful battle.net authentication, token data will be available at res.token_data|
-|LOGIN_FAILURE| ```function(req, res){ res.status(500).send(res.error) }``| A function to handle a failed battle.net authentication (use declined access, bnet server errors, invalid grants, etc), error data will be available at res.error |
+#####Options List
+<table>
+  <thead><tr><th>Name</th><th>Default</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>BNET_REGION</td>
+      <td>'us'</td>
+      <td>Changing the region you auth against. Valid values: us, eu, kr, tw, or cn</td>
+    </tr>
+    <tr>
+      <td>BNET_SCOPE</td>
+      <td>'wow.profile'</td>
+      <td>Changing the scope of your request. Valid values: wow.profile, sc2.profile</td>
+    </tr><tr>
+      <td>BNET_AUTH_URL</td>
+      <td>'/auth/bnet'</td>
+      <td>This value is the route you want your Express app to use to begin BNET authentication.</td>
+    </tr><tr>
+      <td>BNET_CALLBACK_URL</td>
+      <td>'/auth/bnet/callback'</td>
+      <td>This value is the route you want your Express app to use for the callback from the Blizzard OAuth API. 
+      This value has to match your applications "REGISTER CALLBACK URL" without your BASE_URL value.</td>
+    </tr>
+    <tr>
+      <td>LOGIN_SUCCESS</td>
+      <td>```function(req, res){ res.status(200).send('Use your own method to manipulate res.token_data, 
+      currently: ' + JSON.stringify(res.token_data))}```</td>
+      <td>A function to handle a successful battle.net authentication, token data will be available at res.token_data</td>
+    </tr>
+    <tr>
+      <td>LOGIN_FAILURE</td>
+      <td>```function(req, res){ res.status(500).send(res.error) }``</td>
+      <td>A function to handle a failed battle.net authentication (use declined access, bnet server errors, invalid 
+      grants, etc), error data will be available at res.error</td>
+    </tr>
+  </tbody>
+</table>    
